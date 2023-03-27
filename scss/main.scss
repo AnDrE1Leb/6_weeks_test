@@ -1,0 +1,119 @@
+@import "styles/_basics.scss";
+
+
+main {
+  margin: 0 auto;
+  width: 50%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form {
+  padding-top: 220px;
+  .form__content {
+    .form__title {
+      font-weight: 500;
+      font-size: 56px;
+      line-height: 72px;
+    }
+    .form__fields {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      >label {
+        width: 48%;
+        margin-top: 40px;
+        position: relative;
+        input {
+          width: 100%;
+          padding-bottom: 17px;
+          background: none;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid grey;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: white;
+          margin-bottom: 8px;
+          &::placeholder {
+            color: grey;
+          }
+          &.error {
+            border-color: red;
+            &::placeholder {
+              color: red;
+            }
+          }
+        }
+        label.error {
+        }
+      }
+    }
+    .form__controls {
+      padding-top: 44px;
+      padding-bottom: 80px;
+      .send-form {
+        display: block;
+        padding: 18px 80px;
+        background: white;
+        border-radius: 28px;
+        font-weight: 500;
+        font-size: 16px;
+        color: black;
+        outline: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 0.7s ease;
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            border: 1px solid white;
+            background: black;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 750px) {
+  .form {
+    margin-top: 0;
+    padding-top: 98px;
+    background: none;
+    .form__content {
+      .form__title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+      }
+      form {
+        padding-top: 8px;
+        .form__fields {
+          display: block;
+          >label {
+            width: 100%;
+            margin-top: 24px;
+            display: block;
+            input {
+              margin-top: 3px;
+            }
+          }
+        }
+        .form__controls {
+          padding-top: 32px;
+          padding-bottom: 0;
+          .send-form {
+            display: block;
+            padding: 14px 0;
+            width: 100%;
+            text-align: center;
+            background: white;
+            border-radius: 28px;
+          }
+        }
+      }
+    }
+  }
+}
